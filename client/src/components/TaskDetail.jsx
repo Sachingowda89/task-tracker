@@ -18,14 +18,20 @@ export default function TaskDetail({ task, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
-      <div className="bg-white p-4 rounded shadow w-full max-w-md">
-        <h3 className="font-bold text-lg mb-2">{task.title}</h3>
-        <p className="mb-4">{task.description}</p>
 
+      <div className="card w-full max-w-lg shadow-xl">
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-xl font-semibold">{task.title}</h3>
+          <button onClick={onClose} className="text-gray-500">✖</button>
+        </div>
+
+        <p className="text-gray-700 mb-4">{task.description}</p>
+
+        <label className="block text-sm mb-1">Status</label>
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="border p-2 w-full mb-4"
+          className="input mb-4"
         >
           <option value="todo">Todo</option>
           <option value="in-progress">In Progress</option>
@@ -33,18 +39,11 @@ export default function TaskDetail({ task, onClose }) {
         </select>
 
         <div className="flex justify-end gap-2">
-          <button onClick={deleteIt} className="bg-red-500 text-white px-3 py-2 rounded">
-            Delete
-          </button>
-          <button onClick={updateStatus} className="bg-blue-600 text-white px-3 py-2 rounded">
-            Save
-          </button>
+          <button onClick={deleteIt} className="btn-danger">Delete</button>
+          <button onClick={updateStatus} className="btn-primary">Save</button>
         </div>
-
-        <button className="mt-3 text-gray-700 underline" onClick={onClose}>
-          Close
-        </button>
       </div>
+
     </div>
   );
 }

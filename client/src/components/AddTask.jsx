@@ -22,44 +22,46 @@ export default function AddTask() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow">
-      <h3 className="font-bold mb-2">Add Task</h3>
+    <div className="card">
+      <h3 className="text-xl font-semibold mb-4">Add New Task</h3>
 
-      <input
-        name="title"
-        placeholder="Title"
-        className="border p-2 w-full mb-2"
-        onChange={handleChange}
-        value={form.title}
-      />
+      <form onSubmit={handleSubmit} className="space-y-3">
 
-      <textarea
-        name="description"
-        placeholder="Description"
-        className="border p-2 w-full mb-2"
-        onChange={handleChange}
-        value={form.description}
-      />
+        <input
+          name="title"
+          placeholder="Task Title"
+          className="input"
+          onChange={handleChange}
+          value={form.title}
+        />
 
-      <input
-        name="assigneeId"
-        placeholder="Assignee"
-        className="border p-2 w-full mb-2"
-        onChange={handleChange}
-        value={form.assigneeId}
-      />
+        <textarea
+          name="description"
+          placeholder="Description"
+          className="input"
+          rows="3"
+          onChange={handleChange}
+          value={form.description}
+        />
 
-      <input
-        name="dueDate"
-        type="date"
-        className="border p-2 w-full mb-2"
-        onChange={handleChange}
-        value={form.dueDate}
-      />
+        <input
+          name="assigneeId"
+          placeholder="Assignee Name"
+          className="input"
+          onChange={handleChange}
+          value={form.assigneeId}
+        />
 
-      <button className="bg-blue-600 text-white px-4 py-2 rounded">
-        Add
-      </button>
-    </form>
+        <input
+          name="dueDate"
+          type="date"
+          className="input"
+          onChange={handleChange}
+          value={form.dueDate}
+        />
+
+        <button className="btn-primary w-full">Add Task</button>
+      </form>
+    </div>
   );
 }

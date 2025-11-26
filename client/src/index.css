@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-  height: 100%;
+body {
+  @apply bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800;
+}
+
+.card {
+  @apply bg-white/90 backdrop-blur-md shadow-lg rounded-xl p-5;
+}
+
+.input {
+  @apply border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-500 outline-none transition;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition font-medium;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition font-medium;
+}
+
+.tag {
+  @apply px-2 py-1 rounded text-xs font-medium;
 }
